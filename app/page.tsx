@@ -16,7 +16,7 @@ export default function Home() {
           <Container className="text-center pt-12">
             <Flex direction="column" align="center" gap={24}>
               <Avatar
-                src="/profile.jpg"
+                src="./profile.jpg"
                 alt="Anushka Burade"
                 size="xl"
                 className="border-4 border-surface shadow-xl"
@@ -44,7 +44,7 @@ export default function Home() {
                     View Projects
                   </Button>
                 </Link>
-                <Link href="/resume.pdf" target="_blank" rel="noopener noreferrer">
+                <Link href="./resume.pdf" target="_blank" rel="noopener noreferrer">
                   <Button size="lg" className="rounded-xl shadow-sm hover:shadow-md transition-all bg-surface text-default border-default hover:bg-subtle">
                     Download Resume
                   </Button>
