@@ -10,7 +10,7 @@ This document provides a high-level overview of the structure and architecture o
 
 ## Core Architectural Rules
 The codebase strictly adheres to the following rules:
-1. **NUI Components Only**: No raw HTML tags are used for layouts. All layout structures use `@nofinite/nui` layout primitives (`<Container>`, `<Flex>`, `<Grid>`, `<Stack>`). All `<nav>`, `<footer>`, `<section>`, and `<div>` tags have been explicitly removed.
+1. **NUI Components Only**: No raw HTML layout tags are written directly in the source code. All layout structures use `@nofinite/nui` layout primitives (`<Container>`, `<Flex>`, `<Grid>`, `<Stack>`). All `<nav>`, `<footer>`, `<section>`, and `<div>` tags have been explicitly removed from the `.tsx` files (note: NUI primitives inherently render to `<div>` tags in the compiled DOM).
 2. **NUICSS Only**: No custom CSS files, inline styles, or external utility frameworks (like Tailwind CSS) are allowed. 
 3. **Static Generation**: The site is statically built (`output: 'export'`).
 4. **Exact Content Match**: The content precisely mirrors the Vercel reference deployment.
