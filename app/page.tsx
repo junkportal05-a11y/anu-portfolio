@@ -2,14 +2,14 @@
 
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-import { Avatar, Button, Card, Badge, Link } from "@nofinite/nui";
+import { Avatar, Button, Card, Badge, Link, Container } from "@nofinite/nui";
 
 export default function Home() {
   return (
     <>
       <Navbar />
 
-      <main className="container-main py-12 flex flex-col gap-16">
+      <Container size="xl" className="py-12 flex flex-col gap-16 min-h-screen justify-center">
 
         {/* Hero */}
         <section className="text-center pt-16 flex flex-col items-center">
@@ -17,7 +17,7 @@ export default function Home() {
             src="/profile.jpg"
             alt="Anushka Burade"
             size="xl"
-            className="border-4 border-default shadow-xl mb-8 avatar-size"
+            className="border-4 border-default shadow-xl mb-8"
           />
 
           <h1 className="text-5xl md:text-6xl font-bold mb-4 text-default">
@@ -28,11 +28,11 @@ export default function Home() {
             BCA Student • Frontend Developer • AI Enthusiast
           </h2>
 
-          <p className="container-text leading-relaxed text-lg text-subtle">
+          <Container size="md" className="leading-relaxed text-lg text-subtle">
             Passionate about Web Development, Artificial Intelligence, and
             building modern, responsive websites. I enjoy creating innovative
             projects using HTML, CSS, JavaScript, Python, and Computer Vision.
-          </p>
+          </Container>
 
           <div className="flex flex-col sm:flex-row gap-4 mt-10 justify-center">
             <Link href="#projects">
@@ -51,13 +51,13 @@ export default function Home() {
         {/* About */}
         <section className="text-center">
           <h2 className="text-primary text-4xl font-bold mb-8">About Me</h2>
-          <p className="container-text leading-relaxed text-lg text-subtle">
+          <Container size="md" className="leading-relaxed text-lg text-subtle">
             I am currently pursuing my Bachelor of Computer Applications (BCA)
             at G H Raisoni College, Nagpur. I enjoy building responsive websites
             using HTML, CSS and JavaScript while exploring Artificial
             Intelligence and Computer Vision. I am always eager to learn
             new technologies and solve real-world problems through code.
-          </p>
+          </Container>
         </section>
 
         {/* Skills */}
@@ -75,11 +75,13 @@ export default function Home() {
         {/* Education */}
         <section id="education" className="text-center">
           <h2 className="text-primary text-4xl font-bold mb-8">Education</h2>
-          <Card className="rounded-2xl p-8 shadow-lg border border-default transition-all hover:shadow-xl container-narrow bg-surface">
-            <h3 className="text-primary text-2xl font-bold mb-4">Bachelor of Computer Applications (BCA)</h3>
-            <p className="text-subtle leading-relaxed mb-2">G H Raisoni College, Nagpur</p>
-            <p className="text-subtle leading-relaxed">2024 - 2028</p>
-          </Card>
+          <Container size="sm">
+            <Card className="rounded-2xl p-8 shadow-lg border border-default transition-all hover:shadow-xl bg-surface">
+              <h3 className="text-primary text-2xl font-bold mb-4">Bachelor of Computer Applications (BCA)</h3>
+              <p className="text-subtle leading-relaxed mb-2">G H Raisoni College, Nagpur</p>
+              <p className="text-subtle leading-relaxed">2024 - 2028</p>
+            </Card>
+          </Container>
         </section>
 
         {/* Projects */}
@@ -144,53 +146,55 @@ export default function Home() {
         <section id="contact" className="text-center pb-12">
           <h2 className="text-primary text-4xl font-bold mb-8">Contact</h2>
           
-          <div className="flex flex-col gap-6 text-lg text-subtle mt-12 bg-surface p-10 rounded-2xl shadow-lg border border-default container-narrow">
-            <p className="flex justify-center items-center gap-4">
-              <span className="text-2xl">📧</span>
-              <Link href="mailto:buradeanushka@gmail.com" className="text-primary font-bold hover:underline">
-                buradeanushka@gmail.com
-              </Link>
-            </p>
+          <Container size="sm">
+            <div className="flex flex-col gap-6 text-lg text-subtle mt-12 bg-surface p-10 rounded-2xl shadow-lg border border-default">
+              <p className="flex justify-center items-center gap-4">
+                <span className="text-2xl">📧</span>
+                <Link href="mailto:buradeanushka@gmail.com" className="text-primary font-bold hover:underline">
+                  buradeanushka@gmail.com
+                </Link>
+              </p>
 
-            <p className="flex justify-center items-center gap-4">
-              <span className="text-2xl">📱</span>
-              <Link href="tel:+917507605763" className="text-primary font-bold hover:underline">
-                +91 7507605763
-              </Link>
-            </p>
+              <p className="flex justify-center items-center gap-4">
+                <span className="text-2xl">📱</span>
+                <Link href="tel:+917507605763" className="text-primary font-bold hover:underline">
+                  +91 7507605763
+                </Link>
+              </p>
 
-            <p className="flex justify-center items-center gap-4">
-              <span className="text-2xl">📍</span>
-              <span>Nagpur, Maharashtra</span>
-            </p>
+              <p className="flex justify-center items-center gap-4">
+                <span className="text-2xl">📍</span>
+                <span>Nagpur, Maharashtra</span>
+              </p>
 
-            <p className="flex justify-center items-center gap-4">
-              <span className="text-2xl">💻</span>
-              <Link
-                href="https://github.com/buradeanushka"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-primary font-bold hover:underline"
-              >
-                GitHub
-              </Link>
-            </p>
+              <p className="flex justify-center items-center gap-4">
+                <span className="text-2xl">💻</span>
+                <Link
+                  href="https://github.com/buradeanushka"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-primary font-bold hover:underline"
+                >
+                  GitHub
+                </Link>
+              </p>
 
-            <p className="flex justify-center items-center gap-4">
-              <span className="text-2xl">💼</span>
-              <Link
-                href="https://www.linkedin.com/in/anushka-burade"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-primary font-bold hover:underline"
-              >
-                LinkedIn
-              </Link>
-            </p>
-          </div>
+              <p className="flex justify-center items-center gap-4">
+                <span className="text-2xl">💼</span>
+                <Link
+                  href="https://www.linkedin.com/in/anushka-burade"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-primary font-bold hover:underline"
+                >
+                  LinkedIn
+                </Link>
+              </p>
+            </div>
+          </Container>
         </section>
 
-      </main>
+      </Container>
 
       <Footer />
     </>
