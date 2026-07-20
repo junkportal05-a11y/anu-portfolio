@@ -13,7 +13,7 @@ export default function Home() {
         <Stack gap="4rem">
           
           {/* Hero */}
-          <section className="text-center pt-12">
+          <Container className="text-center pt-12">
             <Flex direction="column" align="center" gap={24}>
               <Avatar
                 src="/profile.jpg"
@@ -51,10 +51,10 @@ export default function Home() {
                 </Link>
               </Flex>
             </Flex>
-          </section>
+          </Container>
 
           {/* About */}
-          <section className="text-center">
+          <Container className="text-center">
             <h2 className="text-primary text-4xl font-bold mb-8">About Me</h2>
             <Container size="md">
               <p className="leading-relaxed text-lg text-subtle">
@@ -65,10 +65,10 @@ export default function Home() {
                 new technologies and solve real-world problems through code.
               </p>
             </Container>
-          </section>
+          </Container>
 
           {/* Skills */}
-          <section className="text-center">
+          <Container className="text-center">
             <h2 className="text-primary text-4xl font-bold mb-8">Skills</h2>
             <Flex justify="center" wrap="wrap" gap={16} className="mt-6">
               {['HTML', 'CSS', 'JavaScript', 'Python', 'OpenCV', 'MediaPipe', 'MySQL', 'Git', 'GitHub'].map(skill => (
@@ -77,10 +77,10 @@ export default function Home() {
                 </Badge>
               ))}
             </Flex>
-          </section>
+          </Container>
 
           {/* Education */}
-          <section id="education" className="text-center">
+          <Container id="education" className="text-center">
             <h2 className="text-primary text-4xl font-bold mb-8">Education</h2>
             <Container size="md">
               <Card className="rounded-2xl p-8 shadow-lg border border-transparent transition-all hover:shadow-xl bg-surface">
@@ -89,15 +89,15 @@ export default function Home() {
                 <p className="text-subtle leading-relaxed">2024 - 2028</p>
               </Card>
             </Container>
-          </section>
+          </Container>
 
           {/* Projects */}
-          <section id="projects" className="text-center">
+          <Container id="projects" className="text-center">
             <h2 className="text-primary text-4xl font-bold mb-8">Projects</h2>
             
             <Grid columns="auto-fit" minColWidth="320px" gap={32} className="mt-10 text-left">
               <Card className="rounded-2xl p-8 shadow-lg border border-transparent transition-all hover:shadow-xl bg-surface">
-                <div>
+                <Stack gap={16}>
                   <h3 className="text-primary text-2xl font-bold mb-4">Mouse Control via Eye Tracking</h3>
                   <p className="text-subtle leading-relaxed mb-6">
                     AI-powered computer vision application that enables users
@@ -116,7 +116,7 @@ export default function Home() {
               </Card>
 
               <Card className="rounded-2xl p-8 shadow-lg border border-transparent transition-all hover:shadow-xl bg-surface">
-                <div>
+                <Stack gap={16}>
                   <h3 className="text-primary text-2xl font-bold mb-4">AI Detector</h3>
                   <p className="text-subtle leading-relaxed mb-6">
                     AI-powered application that detects AI-generated content using
@@ -124,18 +124,18 @@ export default function Home() {
                     interface.<br/><br/>
                     <strong className="text-default">Status:</strong> Under Development
                   </p>
-                </div>
+                </Stack>
               </Card>
 
               <Card className="rounded-2xl p-8 shadow-lg border border-transparent transition-all hover:shadow-xl bg-surface">
-                <div>
+                <Stack gap={16}>
                   <h3 className="text-primary text-2xl font-bold mb-4">Portfolio Website</h3>
                   <p className="text-subtle leading-relaxed mb-6">
                     A personal portfolio website built with Next.js, customized with 
                     the NUI component library and strictly styled with NUICSS utilities 
                     for a fully responsive and clean layout.
                   </p>
-                </div>
+                </Stack>
                 <Link
                   href="https://github.com/junkportal05-a11y/anu-portfolio"
                   target="_blank"
@@ -146,10 +146,10 @@ export default function Home() {
                 </Link>
               </Card>
             </Grid>
-          </section>
+          </Container>
 
           {/* Contact */}
-          <section id="contact" className="text-center pb-12">
+          <Container id="contact" className="text-center pb-12">
             <h2 className="text-primary text-4xl font-bold mb-8">Contact</h2>
             
             <Container size="sm">
@@ -198,7 +198,7 @@ export default function Home() {
                 </p>
               </Stack>
             </Container>
-          </section>
+          </Container>
 
         </Stack>
       </Container>

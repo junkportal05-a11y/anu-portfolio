@@ -4,7 +4,7 @@ import { Link, Flex, Container } from "@nofinite/nui";
 
 export default function Navbar() {
   return (
-    <nav className="bg-surface opacity-95 z-sticky shadow-sm sticky top-0 py-4 border-b border-default">
+    <Container className="bg-surface opacity-95 z-sticky shadow-sm sticky top-0 py-4 border-b border-default w-full">
       <Container size="xl">
         <Flex justify="between" align="center" wrap="wrap" gap={20}>
           <Link href="/" className="text-primary text-3xl font-bold hover:opacity-90">
@@ -18,6 +18,6 @@ export default function Navbar() {
           </Flex>
         </Flex>
       </Container>
-    </nav>
+    </Container>
   );
 }
