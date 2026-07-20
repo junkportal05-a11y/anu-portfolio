@@ -1,31 +1,23 @@
-import { Link } from "@nofinite/nui";
+"use client";
+
+import { Link, Flex, Container } from "@nofinite/nui";
 
 export default function Navbar() {
   return (
-    <nav className="flex justify-between items-center px-8 py-4 sticky top-0 z-sticky shadow-sm w-full bg-surface">
-      <h2 className="text-primary text-2xl font-bold m-0">Anushka Burade</h2>
-      <ul className="flex gap-6 list-none m-0 p-0">
-        <li>
-          <Link href="#" className="font-semibold text-default hover:text-primary transition-all">
-            Home
+    <nav className="bg-surface opacity-95 z-sticky shadow-sm sticky top-0 py-4 border-b border-default">
+      <Container size="xl">
+        <Flex justify="between" align="center" wrap="wrap" gap={20}>
+          <Link href="/" className="text-primary text-3xl font-bold hover:opacity-90">
+            Anushka.
           </Link>
-        </li>
-        <li>
-          <Link href="#education" className="font-semibold text-default hover:text-primary transition-all">
-            Education
-          </Link>
-        </li>
-        <li>
-          <Link href="#projects" className="font-semibold text-default hover:text-primary transition-all">
-            Projects
-          </Link>
-        </li>
-        <li>
-          <Link href="#contact" className="font-semibold text-default hover:text-primary transition-all">
-            Contact
-          </Link>
-        </li>
-      </ul>
+
+          <Flex gap={30} wrap="wrap" justify="center" className="text-default font-semibold">
+            <span><Link href="#education" className="hover:text-primary transition-all">Education</Link></span>
+            <span><Link href="#projects" className="hover:text-primary transition-all">Projects</Link></span>
+            <span><Link href="#contact" className="hover:text-primary transition-all">Contact</Link></span>
+          </Flex>
+        </Flex>
+      </Container>
     </nav>
   );
 }

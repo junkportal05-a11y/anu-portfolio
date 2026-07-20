@@ -2,201 +2,208 @@
 
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-import { Avatar, Button, Card, Badge, Link, Container } from "@nofinite/nui";
+import { Avatar, Button, Card, Badge, Link, Container, Flex, Grid, Stack } from "@nofinite/nui";
 
 export default function Home() {
   return (
-    <>
+    <div className="bg-muted min-h-screen text-default">
       <Navbar />
 
-      <Container size="xl" className="py-12 flex flex-col gap-16 min-h-screen justify-center">
-
-        {/* Hero */}
-        <section className="text-center pt-16 flex flex-col items-center">
-          <Avatar
-            src="/profile.jpg"
-            alt="Anushka Burade"
-            size="xl"
-            className="border-4 border-default shadow-xl mb-8"
-          />
-
-          <h1 className="text-5xl md:text-6xl font-bold mb-4 text-default">
-            Hi, I&apos;m Anushka Burade 👋
-          </h1>
-
-          <h2 className="text-primary text-2xl md:text-3xl font-semibold mb-6">
-            BCA Student • Frontend Developer • AI Enthusiast
-          </h2>
-
-          <Container size="md" className="leading-relaxed text-lg text-subtle">
-            Passionate about Web Development, Artificial Intelligence, and
-            building modern, responsive websites. I enjoy creating innovative
-            projects using HTML, CSS, JavaScript, Python, and Computer Vision.
-          </Container>
-
-          <div className="flex flex-col sm:flex-row gap-4 mt-10 justify-center">
-            <Link href="#projects">
-              <Button color="primary" size="lg" className="rounded-xl transition-all shadow-sm">
-                View Projects
-              </Button>
-            </Link>
-            <Link href="/resume.pdf" target="_blank" rel="noopener noreferrer">
-              <Button size="lg" className="rounded-xl transition-all bg-surface text-default border-default hover:bg-subtle">
-                Download Resume
-              </Button>
-            </Link>
-          </div>
-        </section>
-
-        {/* About */}
-        <section className="text-center">
-          <h2 className="text-primary text-4xl font-bold mb-8">About Me</h2>
-          <Container size="md" className="leading-relaxed text-lg text-subtle">
-            I am currently pursuing my Bachelor of Computer Applications (BCA)
-            at G H Raisoni College, Nagpur. I enjoy building responsive websites
-            using HTML, CSS and JavaScript while exploring Artificial
-            Intelligence and Computer Vision. I am always eager to learn
-            new technologies and solve real-world problems through code.
-          </Container>
-        </section>
-
-        {/* Skills */}
-        <section className="text-center">
-          <h2 className="text-primary text-4xl font-bold mb-8">Skills</h2>
-          <div className="flex justify-center flex-wrap gap-4 mt-6">
-            {['HTML', 'CSS', 'JavaScript', 'Python', 'OpenCV', 'MediaPipe', 'MySQL', 'Git', 'GitHub'].map(skill => (
-              <Badge key={skill} variant="outline" size="lg" className="px-6 py-2 rounded-full shadow-sm bg-surface text-primary border-primary hover:bg-primary hover:text-inverse transition-all text-base font-semibold cursor-default">
-                {skill}
-              </Badge>
-            ))}
-          </div>
-        </section>
-
-        {/* Education */}
-        <section id="education" className="text-center">
-          <h2 className="text-primary text-4xl font-bold mb-8">Education</h2>
-          <Container size="sm">
-            <Card className="rounded-2xl p-8 shadow-lg border border-default transition-all hover:shadow-xl bg-surface">
-              <h3 className="text-primary text-2xl font-bold mb-4">Bachelor of Computer Applications (BCA)</h3>
-              <p className="text-subtle leading-relaxed mb-2">G H Raisoni College, Nagpur</p>
-              <p className="text-subtle leading-relaxed">2024 - 2028</p>
-            </Card>
-          </Container>
-        </section>
-
-        {/* Projects */}
-        <section id="projects" className="text-center">
-          <h2 className="text-primary text-4xl font-bold mb-8">Projects</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-10 text-left">
-            
-            <Card className="rounded-2xl p-8 shadow-lg border border-default transition-all hover:shadow-xl flex flex-col justify-between bg-surface">
-              <div>
-                <h3 className="text-primary text-2xl font-bold mb-4">Mouse Control via Eye Tracking</h3>
-                <p className="text-subtle leading-relaxed mb-6">
-                  AI-powered computer vision application that enables users
-                  to control the mouse cursor using eye movements.
-                  Developed using Python, OpenCV and MediaPipe.
-                </p>
-              </div>
-              <Link
-                href="https://github.com/buradeanushka/mouse-control-via-eye-tracking"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-primary font-bold hover:underline self-start"
-              >
-                View Project →
-              </Link>
-            </Card>
-
-            <Card className="rounded-2xl p-8 shadow-lg border border-default transition-all hover:shadow-xl flex flex-col justify-between bg-surface">
-              <div>
-                <h3 className="text-primary text-2xl font-bold mb-4">AI Detector</h3>
-                <p className="text-subtle leading-relaxed mb-6">
-                  AI-powered application that detects AI-generated content using
-                  machine learning techniques with a clean and responsive
-                  interface.<br/><br/>
-                  <strong className="text-default">Status:</strong> Under Development
-                </p>
-              </div>
-            </Card>
-
-            <Card className="rounded-2xl p-8 shadow-lg border border-default transition-all hover:shadow-xl flex flex-col justify-between bg-surface">
-              <div>
-                <h3 className="text-primary text-2xl font-bold mb-4">Portfolio Website</h3>
-                <p className="text-subtle leading-relaxed mb-6">
-                  A personal portfolio website built with Next.js, customized with 
-                  the NUI component library and strictly styled with NUICSS utilities 
-                  for a fully responsive and clean layout.
-                </p>
-              </div>
-              <Link
-                href="https://github.com/junkportal05-a11y/anu-portfolio"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-primary font-bold hover:underline self-start"
-              >
-                View Project →
-              </Link>
-            </Card>
-
-          </div>
-        </section>
-
-        {/* Contact */}
-        <section id="contact" className="text-center pb-12">
-          <h2 className="text-primary text-4xl font-bold mb-8">Contact</h2>
+      <Container size="xl" className="py-12">
+        <Stack gap="4rem">
           
-          <Container size="sm">
-            <div className="flex flex-col gap-6 text-lg text-subtle mt-12 bg-surface p-10 rounded-2xl shadow-lg border border-default">
-              <p className="flex justify-center items-center gap-4">
-                <span className="text-2xl">📧</span>
-                <Link href="mailto:buradeanushka@gmail.com" className="text-primary font-bold hover:underline">
-                  buradeanushka@gmail.com
+          {/* Hero */}
+          <section className="text-center pt-12">
+            <Flex direction="column" align="center" gap={24}>
+              <Avatar
+                src="/profile.jpg"
+                alt="Anushka Burade"
+                size="xl"
+                className="border-4 border-surface shadow-xl"
+              />
+
+              <h1 className="text-5xl md:text-6xl font-bold text-default">
+                Hi, I&apos;m Anushka Burade 👋
+              </h1>
+
+              <h2 className="text-primary text-2xl md:text-3xl font-semibold">
+                BCA Student • Frontend Developer • AI Enthusiast
+              </h2>
+
+              <Container size="md">
+                <p className="leading-relaxed text-lg text-subtle">
+                  Passionate about Web Development, Artificial Intelligence, and
+                  building modern, responsive websites. I enjoy creating innovative
+                  projects using HTML, CSS, JavaScript, Python, and Computer Vision.
+                </p>
+              </Container>
+
+              <Flex wrap="wrap" justify="center" gap={16} className="mt-4">
+                <Link href="#projects">
+                  <Button color="primary" size="lg" className="rounded-xl shadow-sm hover:shadow-md transition-all">
+                    View Projects
+                  </Button>
                 </Link>
-              </p>
-
-              <p className="flex justify-center items-center gap-4">
-                <span className="text-2xl">📱</span>
-                <Link href="tel:+917507605763" className="text-primary font-bold hover:underline">
-                  +91 7507605763
+                <Link href="/resume.pdf" target="_blank" rel="noopener noreferrer">
+                  <Button size="lg" className="rounded-xl shadow-sm hover:shadow-md transition-all bg-surface text-default border-default hover:bg-subtle">
+                    Download Resume
+                  </Button>
                 </Link>
-              </p>
+              </Flex>
+            </Flex>
+          </section>
 
-              <p className="flex justify-center items-center gap-4">
-                <span className="text-2xl">📍</span>
-                <span>Nagpur, Maharashtra</span>
+          {/* About */}
+          <section className="text-center">
+            <h2 className="text-primary text-4xl font-bold mb-8">About Me</h2>
+            <Container size="md">
+              <p className="leading-relaxed text-lg text-subtle">
+                I am currently pursuing my Bachelor of Computer Applications (BCA)
+                at G H Raisoni College, Nagpur. I enjoy building responsive websites
+                using HTML, CSS and JavaScript while exploring Artificial
+                Intelligence and Computer Vision. I am always eager to learn
+                new technologies and solve real-world problems through code.
               </p>
+            </Container>
+          </section>
 
-              <p className="flex justify-center items-center gap-4">
-                <span className="text-2xl">💻</span>
+          {/* Skills */}
+          <section className="text-center">
+            <h2 className="text-primary text-4xl font-bold mb-8">Skills</h2>
+            <Flex justify="center" wrap="wrap" gap={16} className="mt-6">
+              {['HTML', 'CSS', 'JavaScript', 'Python', 'OpenCV', 'MediaPipe', 'MySQL', 'Git', 'GitHub'].map(skill => (
+                <Badge key={skill} variant="outline" size="lg" color="primary" className="px-6 py-2 rounded-full shadow-sm hover:bg-primary hover:text-inverse transition-all text-base font-semibold cursor-default">
+                  {skill}
+                </Badge>
+              ))}
+            </Flex>
+          </section>
+
+          {/* Education */}
+          <section id="education" className="text-center">
+            <h2 className="text-primary text-4xl font-bold mb-8">Education</h2>
+            <Container size="md">
+              <Card className="rounded-2xl p-8 shadow-lg border border-transparent transition-all hover:shadow-xl bg-surface">
+                <h3 className="text-primary text-2xl font-bold mb-4">Bachelor of Computer Applications (BCA)</h3>
+                <p className="text-subtle leading-relaxed mb-2">G H Raisoni College, Nagpur</p>
+                <p className="text-subtle leading-relaxed">2024 - 2028</p>
+              </Card>
+            </Container>
+          </section>
+
+          {/* Projects */}
+          <section id="projects" className="text-center">
+            <h2 className="text-primary text-4xl font-bold mb-8">Projects</h2>
+            
+            <Grid columns="auto-fit" minColWidth="320px" gap={32} className="mt-10 text-left">
+              <Card className="rounded-2xl p-8 shadow-lg border border-transparent transition-all hover:shadow-xl flex flex-col justify-between bg-surface">
+                <div>
+                  <h3 className="text-primary text-2xl font-bold mb-4">Mouse Control via Eye Tracking</h3>
+                  <p className="text-subtle leading-relaxed mb-6">
+                    AI-powered computer vision application that enables users
+                    to control the mouse cursor using eye movements.
+                    Developed using Python, OpenCV and MediaPipe.
+                  </p>
+                </div>
                 <Link
-                  href="https://github.com/buradeanushka"
+                  href="https://github.com/buradeanushka/mouse-control-via-eye-tracking"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-primary font-bold hover:underline"
+                  className="text-primary font-bold hover:underline self-start mt-4"
                 >
-                  GitHub
+                  View Project →
                 </Link>
-              </p>
+              </Card>
 
-              <p className="flex justify-center items-center gap-4">
-                <span className="text-2xl">💼</span>
+              <Card className="rounded-2xl p-8 shadow-lg border border-transparent transition-all hover:shadow-xl flex flex-col justify-between bg-surface">
+                <div>
+                  <h3 className="text-primary text-2xl font-bold mb-4">AI Detector</h3>
+                  <p className="text-subtle leading-relaxed mb-6">
+                    AI-powered application that detects AI-generated content using
+                    machine learning techniques with a clean and responsive
+                    interface.<br/><br/>
+                    <strong className="text-default">Status:</strong> Under Development
+                  </p>
+                </div>
+              </Card>
+
+              <Card className="rounded-2xl p-8 shadow-lg border border-transparent transition-all hover:shadow-xl flex flex-col justify-between bg-surface">
+                <div>
+                  <h3 className="text-primary text-2xl font-bold mb-4">Portfolio Website</h3>
+                  <p className="text-subtle leading-relaxed mb-6">
+                    A personal portfolio website built with Next.js, customized with 
+                    the NUI component library and strictly styled with NUICSS utilities 
+                    for a fully responsive and clean layout.
+                  </p>
+                </div>
                 <Link
-                  href="https://www.linkedin.com/in/anushka-burade"
+                  href="https://github.com/junkportal05-a11y/anu-portfolio"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-primary font-bold hover:underline"
+                  className="text-primary font-bold hover:underline self-start mt-4"
                 >
-                  LinkedIn
+                  View Project →
                 </Link>
-              </p>
-            </div>
-          </Container>
-        </section>
+              </Card>
+            </Grid>
+          </section>
 
+          {/* Contact */}
+          <section id="contact" className="text-center pb-12">
+            <h2 className="text-primary text-4xl font-bold mb-8">Contact</h2>
+            
+            <Container size="sm">
+              <Stack gap={16} className="text-lg text-subtle mt-4">
+                <p>
+                  📧{" "}
+                  <Link href="mailto:buradeanushka@gmail.com" className="text-primary font-bold hover:underline">
+                    buradeanushka@gmail.com
+                  </Link>
+                </p>
+
+                <p>
+                  📱{" "}
+                  <Link href="tel:+917507605763" className="text-primary font-bold hover:underline">
+                    +91 7507605763
+                  </Link>
+                </p>
+
+                <p>
+                  📍{" "}
+                  <span>Nagpur, Maharashtra</span>
+                </p>
+
+                <p>
+                  💻{" "}
+                  <Link
+                    href="https://github.com/buradeanushka"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-primary font-bold hover:underline"
+                  >
+                    GitHub
+                  </Link>
+                </p>
+
+                <p>
+                  💼{" "}
+                  <Link
+                    href="https://www.linkedin.com/in/anushka-burade"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-primary font-bold hover:underline"
+                  >
+                    LinkedIn
+                  </Link>
+                </p>
+              </Stack>
+            </Container>
+          </section>
+
+        </Stack>
       </Container>
 
       <Footer />
-    </>
+    </div>
   );
 }
