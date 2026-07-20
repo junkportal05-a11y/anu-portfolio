@@ -9,7 +9,7 @@ export default function Home() {
     <>
       <Navbar />
 
-      <main className="mx-auto py-12 flex flex-col gap-16 w-11/12 max-w-6xl min-h-screen justify-center">
+      <main className="container-main py-12 flex flex-col gap-16">
 
         {/* Hero */}
         <section className="text-center pt-16 flex flex-col items-center">
@@ -17,7 +17,7 @@ export default function Home() {
             src="/profile.jpg"
             alt="Anushka Burade"
             size="xl"
-            className="border-4 border-default shadow-xl mb-8 w-48 h-48"
+            className="border-4 border-default shadow-xl mb-8 avatar-size"
           />
 
           <h1 className="text-5xl md:text-6xl font-bold mb-4 text-default">
@@ -28,7 +28,7 @@ export default function Home() {
             BCA Student • Frontend Developer • AI Enthusiast
           </h2>
 
-          <p className="mx-auto leading-relaxed text-lg text-subtle max-w-3xl">
+          <p className="container-text leading-relaxed text-lg text-subtle">
             Passionate about Web Development, Artificial Intelligence, and
             building modern, responsive websites. I enjoy creating innovative
             projects using HTML, CSS, JavaScript, Python, and Computer Vision.
@@ -51,7 +51,7 @@ export default function Home() {
         {/* About */}
         <section className="text-center">
           <h2 className="text-primary text-4xl font-bold mb-8">About Me</h2>
-          <p className="mx-auto leading-relaxed text-lg text-subtle max-w-4xl">
+          <p className="container-text leading-relaxed text-lg text-subtle">
             I am currently pursuing my Bachelor of Computer Applications (BCA)
             at G H Raisoni College, Nagpur. I enjoy building responsive websites
             using HTML, CSS and JavaScript while exploring Artificial
@@ -75,7 +75,7 @@ export default function Home() {
         {/* Education */}
         <section id="education" className="text-center">
           <h2 className="text-primary text-4xl font-bold mb-8">Education</h2>
-          <Card className="rounded-2xl p-8 shadow-lg border border-default transition-all hover:shadow-xl mx-auto bg-surface max-w-2xl">
+          <Card className="rounded-2xl p-8 shadow-lg border border-default transition-all hover:shadow-xl container-narrow bg-surface">
             <h3 className="text-primary text-2xl font-bold mb-4">Bachelor of Computer Applications (BCA)</h3>
             <p className="text-subtle leading-relaxed mb-2">G H Raisoni College, Nagpur</p>
             <p className="text-subtle leading-relaxed">2024 - 2028</p>
@@ -144,7 +144,7 @@ export default function Home() {
         <section id="contact" className="text-center pb-12">
           <h2 className="text-primary text-4xl font-bold mb-8">Contact</h2>
           
-          <div className="flex flex-col gap-6 text-lg text-subtle mt-12 bg-surface p-10 rounded-2xl shadow-lg border border-default mx-auto max-w-2xl">
+          <div className="flex flex-col gap-6 text-lg text-subtle mt-12 bg-surface p-10 rounded-2xl shadow-lg border border-default container-narrow">
             <p className="flex justify-center items-center gap-4">
               <span className="text-2xl">📧</span>
               <Link href="mailto:buradeanushka@gmail.com" className="text-primary font-bold hover:underline">
