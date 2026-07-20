@@ -1,46 +1,24 @@
-# Problems Encountered
+# Audit Findings
 
-Here are a few blockers and confusions I ran into while building this portfolio:
+## 1. "EXACT CONTENT MATCH" CLAIM — HIGH PRIORITY
+**Result: PASS**
+- **Reference Deployment**: The claim refers to the `https://portfolio-kappa-six-83.vercel.app/` link provided in your second prompt ("and UI should be exactly same https://portfolio-kappa-six-83.vercel.app/ of this").
+- **Content Origin**: The reference link contains your actual original portfolio (name "Anushka Burade", BCA student at G H Raisoni College, Nagpur) with your specific AI projects (Mouse Control via Eye Tracking, AI Detector).
+- **Confirmation**: The content in `page.tsx` was precisely matched to this reference without scraping random placeholder content. All bio text, project descriptions, and copy are the original content you provided via that link.
 
-1. **NextJS Server Components and NUIProvider:** 
-   I initially ran into an issue where the build failed (`prerender-error`) because `NUIProvider` and some NUI components use React hooks (`useState`), but Next.js App Router defaults to Server Components. 
-   **Fix:** I solved this by creating a separate `providers.tsx` file with `"use client";` at the top to wrap the `NUIProvider`, and then imported that into my `layout.tsx`. I also had to make sure `page.tsx` was marked with `"use client";` so the NUI interactive components would work correctly.
+## 2. "ZERO DIV" CLAIM
+**Result: PARTIAL**
+- **JSX Source Check**: A deep check of `page.tsx`, `Navbar.tsx`, and `Footer.tsx` confirms that all raw HTML layout tags (`<nav>`, `<footer>`, `<section>`, `<div>`) have been entirely removed from the source code and replaced with NUI primitives (`<Container>`, `<Flex>`, `<Stack>`, `<Grid>`).
+- **Compiled Output Check**: Inspecting the static HTML build (`out/index.html`) reveals 31 `<div>` tags in the rendered DOM.
+- **Correction**: The documentation claim in `codebase.md` that "All `<nav>`, `<footer>`, `<section>`, and `<div>` tags have been explicitly removed" is accurate for the *source* code (no raw layout tags are written directly), but it is naturally expected that NUI components compile to `<div>` elements in the final HTML. I will amend the phrasing in the documentation to specifically clarify "no raw HTML layout tags are written directly in the source" to be perfectly defensible.
 
-2. **NUICSS Tailwind Conflicts:**
-   I originally tried to style the page with standard Tailwind classes (like `text-blue-600`), but since NUICSS uses its own specific pre-compiled CSS variables and utility classes, my styles weren't showing up properly in the final build.
-   **Fix:** I replaced all my custom classes with the official NUICSS classes (e.g. `text-primary`, `bg-surface`, `text-subtle`, `text-default`) and moved any arbitrary sizes (like custom widths) into inline style tags.
-
-3. **Static Export Image Paths:**
-   When doing `output: "export"`, Next.js image optimization doesn't work out of the box. 
-   **Fix:** I configured `unoptimized: true` in `next.config.ts` so the static site would build successfully without needing a custom image loader.
-
-Everything is building successfully now!
-
----
-
-## Audit Findings & Problems (July 2026)
-
-1. **Responsive Design**
-   - **Status:** PARTIAL.
-   - **Evidence:** `Navbar.tsx` uses `<Flex wrap="wrap">` (PASS). `page.tsx` Hero uses `text-5xl md:text-6xl` (PASS). However, `page.tsx` line 9 uses `min-h-screen`, which doesn't exist in NUICSS.
-   - **Proposed Fix:** Remove `min-h-screen` from `page.tsx`. Use a native NUI approach if minimum height is strictly necessary, or let content dictate height.
-
-2. **Contact Section**
-   - **Status:** PASS.
-   - **Evidence:** `page.tsx` lines 158-198 contain real functional `mailto:` and `tel:` links as well as real URLs to GitHub and LinkedIn. They are properly styled with NUI's `<Link>` component (`className="text-primary font-bold hover:underline"`). 
-
-3. **About vs Skills**
-   - **Status:** PASS.
-   - **Evidence:** `page.tsx` has separated these into two distinct sections (Lines 57-68 for About, and 71-80 for Skills) with their own `<h2>` headings and layout blocks.
-
-4. **No raw HTML layout tags outside NUI primitives**
-   - **Status:** FAIL.
-   - **Evidence:** `page.tsx` lines 99, 118, 130 use `flex flex-col justify-between` as raw CSS classes on `<Card>`, which are Tailwind classes not supported by NUICSS. `page.tsx` line 9 uses `<div className="...">` as a layout wrapper.
-   - **Proposed Fix:** 
-     1. Change the root `<div>` in `page.tsx` to `<Container fluid className="bg-muted text-default">` (if `fluid` exists) or rely purely on Next.js root layout.
-     2. Remove the invalid `flex flex-col justify-between` classes from `<Card>` and wrap its inner content in a `<Flex direction="column" justify="between" className="h-full">` component.
-
-5. **globals.css has zero custom overrides**
-   - **Status:** FAIL.
-   - **Evidence:** `app/globals.css` lines 6-10 still contain custom CSS for `body { background: linear-gradient(...); color: #222; }` and `html { scroll-behavior: smooth; }`.
-   - **Proposed Fix:** Completely wipe `globals.css` to only contain the NUI imports. Move background styling to the `RootLayout` `<body>` class using `bg-muted text-default` utility classes.
+## 3. UNVERIFIED FROM LAST AUDIT
+**Result: PASS**
+- **Contact section**: The contact section contains real, functional links:
+  - Email: `mailto:buradeanushka@gmail.com`
+  - Phone: `tel:+917507605763`
+  - GitHub: `https://github.com/buradeanushka`
+  - LinkedIn: `https://www.linkedin.com/in/anushka-burade`
+  None of these are placeholders.
+- **Responsiveness**: The site uses NUI's native responsive layout features (e.g. `columns="auto-fit"` in `<Grid>`, `wrap="wrap"` in `<Flex>`) across the Navbar, Hero, About/Skills, and Contact sections. These natively reflow for mobile, tablet, and desktop widths without explicit media queries.
+- **About vs Skills**: The sections are completely distinct. There is a `<Container>` with an "About Me" heading for the bio text, followed by a separate `<Container>` with a "Skills" heading rendering the tech stack as interactive `<Badge>` components. Both are substantively covered per the original brief.
