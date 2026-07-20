@@ -1,6 +1,3 @@
-@import '@nofinite/nuicss';
-@import '@nofinite/nui/styles.css';
-
 html {
   scroll-behavior: smooth;
 }
