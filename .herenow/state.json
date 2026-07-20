@@ -1,0 +1,10 @@
+{
+  "publishes": {
+    "evoked-medley-h6rb": {
+      "siteUrl": "https://evoked-medley-h6rb.here.now/",
+      "claimToken": "0d94574349be123d27eccce04714fdbb94e777e3137265a16b4bd7acd96a595c",
+      "claimUrl": "https://here.now/claim?slug=evoked-medley-h6rb&token=0d94574349be123d27eccce04714fdbb94e777e3137265a16b4bd7acd96a595c",
+      "expiresAt": "2026-07-21T16:19:49.172Z"
+    }
+  }
+}

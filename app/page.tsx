@@ -6,7 +6,7 @@ import { Avatar, Button, Card, Badge, Link, Container, Flex, Grid, Stack } from 
 
 export default function Home() {
   return (
-    <div className="bg-muted min-h-screen text-default">
+    <>
       <Navbar />
 
       <Container size="xl" className="py-12">
@@ -96,7 +96,7 @@ export default function Home() {
             <h2 className="text-primary text-4xl font-bold mb-8">Projects</h2>
             
             <Grid columns="auto-fit" minColWidth="320px" gap={32} className="mt-10 text-left">
-              <Card className="rounded-2xl p-8 shadow-lg border border-transparent transition-all hover:shadow-xl flex flex-col justify-between bg-surface">
+              <Card className="rounded-2xl p-8 shadow-lg border border-transparent transition-all hover:shadow-xl bg-surface">
                 <div>
                   <h3 className="text-primary text-2xl font-bold mb-4">Mouse Control via Eye Tracking</h3>
                   <p className="text-subtle leading-relaxed mb-6">
@@ -115,7 +115,7 @@ export default function Home() {
                 </Link>
               </Card>
 
-              <Card className="rounded-2xl p-8 shadow-lg border border-transparent transition-all hover:shadow-xl flex flex-col justify-between bg-surface">
+              <Card className="rounded-2xl p-8 shadow-lg border border-transparent transition-all hover:shadow-xl bg-surface">
                 <div>
                   <h3 className="text-primary text-2xl font-bold mb-4">AI Detector</h3>
                   <p className="text-subtle leading-relaxed mb-6">
@@ -127,7 +127,7 @@ export default function Home() {
                 </div>
               </Card>
 
-              <Card className="rounded-2xl p-8 shadow-lg border border-transparent transition-all hover:shadow-xl flex flex-col justify-between bg-surface">
+              <Card className="rounded-2xl p-8 shadow-lg border border-transparent transition-all hover:shadow-xl bg-surface">
                 <div>
                   <h3 className="text-primary text-2xl font-bold mb-4">Portfolio Website</h3>
                   <p className="text-subtle leading-relaxed mb-6">
@@ -204,6 +204,6 @@ export default function Home() {
       </Container>
 
       <Footer />
-    </div>
+    </>
   );
 }
