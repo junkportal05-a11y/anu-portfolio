@@ -2,7 +2,7 @@ import { Link } from "@nofinite/nui";
 
 export default function Navbar() {
   return (
-    <nav className="flex justify-between items-center px-8 py-4 sticky top-0 z-sticky shadow-sm w-full" style={{ backgroundColor: "rgba(255, 255, 255, 0.9)", backdropFilter: "blur(8px)" }}>
+    <nav className="flex justify-between items-center px-8 py-4 sticky top-0 z-sticky shadow-sm w-full bg-surface">
       <h2 className="text-primary text-2xl font-bold m-0">Anushka Burade</h2>
       <ul className="flex gap-6 list-none m-0 p-0">
         <li>
