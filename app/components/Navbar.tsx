@@ -6,22 +6,22 @@ export default function Navbar() {
       <h2 className="text-primary text-2xl font-bold m-0">Anushka Burade</h2>
       <ul className="flex gap-6 list-none m-0 p-0">
         <li>
-          <Link href="#" className="font-semibold text-default hover:text-primary transition-all">
+          <Link href="/" className="font-semibold text-default hover:text-primary transition-all">
             Home
           </Link>
         </li>
         <li>
-          <Link href="#education" className="font-semibold text-default hover:text-primary transition-all">
-            Education
+          <Link href="/about" className="font-semibold text-default hover:text-primary transition-all">
+            About
           </Link>
         </li>
         <li>
-          <Link href="#projects" className="font-semibold text-default hover:text-primary transition-all">
+          <Link href="/projects" className="font-semibold text-default hover:text-primary transition-all">
             Projects
           </Link>
         </li>
         <li>
-          <Link href="#contact" className="font-semibold text-default hover:text-primary transition-all">
+          <Link href="/contact" className="font-semibold text-default hover:text-primary transition-all">
             Contact
           </Link>
         </li>
