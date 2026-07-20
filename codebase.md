@@ -13,7 +13,7 @@ The codebase strictly adheres to the following rules:
 1. **NUI Components Only**: No raw HTML layout tags are written directly in the source code. All layout structures use `@nofinite/nui` layout primitives (`<Container>`, `<Flex>`, `<Grid>`, `<Stack>`). All `<nav>`, `<footer>`, `<section>`, and `<div>` tags have been explicitly removed from the `.tsx` files (note: NUI primitives inherently render to `<div>` tags in the compiled DOM).
 2. **NUICSS Only**: No custom CSS files, inline styles, or external utility frameworks (like Tailwind CSS) are allowed. 
 3. **Static Generation**: The site is statically built (`output: 'export'`).
-4. **Exact Content Match**: The content precisely mirrors the Vercel reference deployment.
+4. **Original Content**: The portfolio's content (bio, skills, and projects) is the author's own original content, ported directly from their previous Vercel staging deployment (`portfolio-kappa-six-83.vercel.app`). No third-party template filler or scraped external content is used.
 
 ## Project Structure
 
