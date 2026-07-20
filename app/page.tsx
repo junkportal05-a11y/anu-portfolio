@@ -104,7 +104,7 @@ export default function Home() {
                     to control the mouse cursor using eye movements.
                     Developed using Python, OpenCV and MediaPipe.
                   </p>
-                </div>
+                </Stack>
                 <Link
                   href="https://github.com/buradeanushka/mouse-control-via-eye-tracking"
                   target="_blank"
@@ -125,25 +125,6 @@ export default function Home() {
                     <strong className="text-default">Status:</strong> Under Development
                   </p>
                 </Stack>
-              </Card>
-
-              <Card className="rounded-2xl p-8 shadow-lg border border-transparent transition-all hover:shadow-xl bg-surface">
-                <Stack gap={16}>
-                  <h3 className="text-primary text-2xl font-bold mb-4">Portfolio Website</h3>
-                  <p className="text-subtle leading-relaxed mb-6">
-                    A personal portfolio website built with Next.js, customized with 
-                    the NUI component library and strictly styled with NUICSS utilities 
-                    for a fully responsive and clean layout.
-                  </p>
-                </Stack>
-                <Link
-                  href="https://github.com/junkportal05-a11y/anu-portfolio"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-primary font-bold hover:underline self-start mt-4"
-                >
-                  View Project →
-                </Link>
               </Card>
             </Grid>
           </Container>
