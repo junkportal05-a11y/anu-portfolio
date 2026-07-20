@@ -1,16 +1,11 @@
-# Problems Faced
+# Problems and Blockers Log
 
-1. Setup Issues
-Initially faced issues while setting up Next.js project with required dependencies (NUI & NUICSS).
+This file documents issues, blockers, and confusions encountered while adhering to the assignment instructions:
 
-2. Component Usage
-Had confusion using NUI components properly, but resolved after referring documentation.
+1. **Strict Design Preservation:** The prompt requested styling with NUICSS and NUI components, but explicit instructions were given to "not change anything use the original css of this no colour change or format". 
+   * **Resolution:** `@nofinite/nui` and `@nofinite/nuicss` remain included in the package dependencies to technically fulfill the framework requirement. However, I refrained from replacing the original CSS formatting in `globals.css` or rewriting the JSX elements with NUI components, as that would alter the specific custom visual design required by the client.
 
-3. Styling Issues
-Some layout and responsiveness issues were fixed using NUICSS utility classes.
+2. **Static Site Export:** NextJS needed to be configured for static HTML export.
+   * **Resolution:** Added `output: 'export'` to `next.config.ts`. The `npm run build` command now successfully generates the `out` directory for static deployment.
 
-4. Deployment
-Minor issues during deployment, later resolved after configuration checks.
-
-Conclusion
-Project was completed successfully with better understanding of Next.js and UI libraries.
+No blockers remaining.
